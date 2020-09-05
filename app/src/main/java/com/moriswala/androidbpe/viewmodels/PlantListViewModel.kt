@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
+import com.moriswala.androidbpe.data.Plant
+import com.moriswala.androidbpe.data.PlantRepository
 
 /**
  * The ViewModel for [PlantListFragment].
@@ -43,13 +45,19 @@ class PlantListViewModel internal constructor(
     }
 
     fun clearGrowZoneNumber() {
-        savedStateHandle.set(GROW_ZONE_SAVED_STATE_KEY, NO_GROW_ZONE)
+        savedStateHandle.set(
+            GROW_ZONE_SAVED_STATE_KEY,
+            NO_GROW_ZONE
+        )
     }
 
     fun isFiltered() = getSavedGrowZoneNumber().value != NO_GROW_ZONE
 
     private fun getSavedGrowZoneNumber(): MutableLiveData<Int> {
-        return savedStateHandle.getLiveData(GROW_ZONE_SAVED_STATE_KEY, NO_GROW_ZONE)
+        return savedStateHandle.getLiveData(
+            GROW_ZONE_SAVED_STATE_KEY,
+            NO_GROW_ZONE
+        )
     }
 
     companion object {

@@ -25,8 +25,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.moriswala.androidbpe.HomeViewPagerFragmentDirections
-import com.moriswala.androidbpe.PlantAndGardenPlantings
-import com.moriswala.androidbpe.PlantAndGardenPlantingsViewModel
+import com.moriswala.androidbpe.data.PlantAndGardenPlantings
+import com.moriswala.androidbpe.viewmodels.PlantAndGardenPlantingsViewModel
 import com.moriswala.androidbpe.R
 import com.moriswala.androidbpe.databinding.ListItemGardenPlantingBinding
 

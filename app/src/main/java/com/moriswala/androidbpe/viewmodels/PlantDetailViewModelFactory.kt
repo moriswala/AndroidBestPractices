@@ -18,19 +18,21 @@ package com.google.samples.apps.sunflower.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.moriswala.androidbpe.GardenPlantingListViewModel
-import com.moriswala.androidbpe.GardenPlantingRepository
+import com.moriswala.androidbpe.data.GardenPlantingRepository
+import com.moriswala.androidbpe.data.PlantRepository
 
 /**
- * Factory for creating a [GardenPlantingListViewModel] with a constructor that takes a
- * [GardenPlantingRepository].
+ * Factory for creating a [PlantDetailViewModel] with a constructor that takes a [PlantRepository]
+ * and an ID for the current [Plant].
  */
-class GardenPlantingListViewModelFactory(
-    private val repository: GardenPlantingRepository
+class PlantDetailViewModelFactory(
+    private val plantRepository: PlantRepository,
+    private val gardenPlantingRepository: GardenPlantingRepository,
+    private val plantId: String
 ) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return GardenPlantingListViewModel(repository) as T
+        return PlantDetailViewModel(plantRepository, gardenPlantingRepository, plantId) as T
     }
 }

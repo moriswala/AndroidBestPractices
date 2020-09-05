@@ -24,7 +24,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="plant"
-            type="com.moriswala.androidbpe.Plant"/>
+            type="com.moriswala.androidbpe.data.Plant"/>
     </data>
 
     <com.moriswala.androidbpe.views.MaskedCardView

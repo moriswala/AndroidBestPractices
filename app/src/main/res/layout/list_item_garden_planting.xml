@@ -24,7 +24,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="viewModel"
-            type="com.moriswala.androidbpe.PlantAndGardenPlantingsViewModel"/>
+            type="com.moriswala.androidbpe.viewmodels.PlantAndGardenPlantingsViewModel"/>
     </data>
 
     <com.moriswala.androidbpe.views.MaskedCardView

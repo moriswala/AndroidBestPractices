@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.data
 
 import com.google.samples.apps.sunflower.data.PlantDao
 
@@ -37,7 +37,9 @@ class PlantRepository private constructor(private val plantDao: PlantDao) {
 
         fun getInstance(plantDao: PlantDao) =
             instance ?: synchronized(this) {
-                instance ?: PlantRepository(plantDao).also { instance = it }
+                instance
+                    ?: PlantRepository(plantDao)
+                        .also { instance = it }
             }
     }
 }

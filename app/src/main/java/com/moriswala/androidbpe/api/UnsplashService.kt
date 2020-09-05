@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.api
 
+import com.moriswala.androidbpe.BuildConfig
+import com.moriswala.androidbpe.data.UnsplashSearchResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level

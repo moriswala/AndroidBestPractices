@@ -14,14 +14,17 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.data
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
+import androidx.room.TypeConverter
+import java.util.Calendar
 
-class GardenPlantingListViewModel internal constructor(
-    gardenPlantingRepository: GardenPlantingRepository
-) : ViewModel() {
-    val plantAndGardenPlantings: LiveData<List<PlantAndGardenPlantings>> =
-        gardenPlantingRepository.getPlantedGardens()
+/**
+ * Type converters to allow Room to reference complex data types.
+ */
+class Converters {
+    @TypeConverter fun calendarToDatestamp(calendar: Calendar): Long = calendar.timeInMillis
+
+    @TypeConverter fun datestampToCalendar(value: Long): Calendar =
+        Calendar.getInstance().apply { timeInMillis = value }
 }

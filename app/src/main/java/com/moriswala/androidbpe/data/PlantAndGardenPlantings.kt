@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.data
 
 import androidx.room.Embedded
 import androidx.room.Relation
+import com.moriswala.androidbpe.data.GardenPlanting
+import com.moriswala.androidbpe.data.Plant
 
 /**
  * This class captures the relationship between a [Plant] and a user's [GardenPlanting], which is

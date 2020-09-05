@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

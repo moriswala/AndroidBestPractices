@@ -14,24 +14,19 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.data
 
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
+import com.google.gson.annotations.SerializedName
 import com.google.samples.apps.sunflower.data.UnsplashPhoto
-import kotlinx.coroutines.flow.Flow
 
-class UnsplashRepository(private val service: UnsplashService) {
-
-    fun getSearchResultStream(query: String): Flow<PagingData<UnsplashPhoto>> {
-        return Pager(
-            config = PagingConfig(enablePlaceholders = false, pageSize = NETWORK_PAGE_SIZE),
-            pagingSourceFactory = { UnsplashPagingSource(service, query) }
-        ).flow
-    }
-
-    companion object {
-        private const val NETWORK_PAGE_SIZE = 25
-    }
-}
+/**
+ * Data class that represents a photo search response from Unsplash.
+ *
+ * Not all of the fields returned from the API are represented here; only the ones used in this
+ * project are listed below. For a full list of fields, consult the API documentation
+ * [here](https://unsplash.com/documentation#search-photos).
+ */
+data class UnsplashSearchResponse(
+    @field:SerializedName("results") val results: List<UnsplashPhoto>,
+    @field:SerializedName("total_pages") val totalPages: Int
+)

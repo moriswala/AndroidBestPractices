@@ -11,6 +11,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.moriswala.androidbpe.adapters.GalleryAdapter
 import com.moriswala.androidbpe.databinding.FragmentGalleryBinding
+import com.moriswala.androidbpe.utilities.InjectorUtils
+import com.moriswala.androidbpe.viewmodels.GalleryViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

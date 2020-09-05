@@ -17,7 +17,9 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
+import com.moriswala.androidbpe.data.Plant
 import com.moriswala.androidbpe.databinding.FragmentPlantDetailBinding
+import com.moriswala.androidbpe.utilities.InjectorUtils
 
 /**
  * A simple [Fragment] subclass.

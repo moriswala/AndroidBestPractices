@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.moriswala.androidbpe.adapters.PlantAdapter
 import com.moriswala.androidbpe.databinding.FragmentPlantListBinding
+import com.moriswala.androidbpe.utilities.InjectorUtils
+import com.moriswala.androidbpe.viewmodels.PlantListViewModel
 
 /**
  * A simple [Fragment] subclass.

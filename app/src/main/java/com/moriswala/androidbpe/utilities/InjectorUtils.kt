@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.utilities
 
 import android.content.Context
 import androidx.fragment.app.Fragment
@@ -22,6 +22,11 @@ import com.google.samples.apps.sunflower.viewmodels.GalleryViewModelFactory
 import com.google.samples.apps.sunflower.viewmodels.GardenPlantingListViewModelFactory
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModelFactory
 import com.google.samples.apps.sunflower.viewmodels.PlantListViewModelFactory
+import com.moriswala.androidbpe.api.UnsplashService
+import com.moriswala.androidbpe.data.AppDatabase
+import com.moriswala.androidbpe.data.GardenPlantingRepository
+import com.moriswala.androidbpe.data.PlantRepository
+import com.moriswala.androidbpe.data.UnsplashRepository
 
 
 /**
@@ -44,11 +49,18 @@ object InjectorUtils {
     fun provideGardenPlantingListViewModelFactory(
         context: Context
     ): GardenPlantingListViewModelFactory {
-        return GardenPlantingListViewModelFactory(getGardenPlantingRepository(context))
+        return GardenPlantingListViewModelFactory(
+            getGardenPlantingRepository(
+                context
+            )
+        )
     }
 
     fun providePlantListViewModelFactory(fragment: Fragment): PlantListViewModelFactory {
-        return PlantListViewModelFactory(getPlantRepository(fragment.requireContext()), fragment)
+        return PlantListViewModelFactory(
+            getPlantRepository(
+                fragment.requireContext()
+            ), fragment)
     }
 
     fun providePlantDetailViewModelFactory(
@@ -56,14 +68,19 @@ object InjectorUtils {
         plantId: String
     ): PlantDetailViewModelFactory {
         return PlantDetailViewModelFactory(
-            getPlantRepository(context),
-            getGardenPlantingRepository(context),
+            getPlantRepository(
+                context
+            ),
+            getGardenPlantingRepository(
+                context
+            ),
             plantId
         )
     }
 
     fun provideGalleryViewModelFactory(): GalleryViewModelFactory {
-        val repository = UnsplashRepository(UnsplashService.create())
+        val repository =
+            UnsplashRepository(UnsplashService.create())
         return GalleryViewModelFactory(repository)
     }
 }

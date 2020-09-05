@@ -22,8 +22,8 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
-import com.moriswala.androidbpe.GardenPlanting
-import com.moriswala.androidbpe.PlantAndGardenPlantings
+import com.moriswala.androidbpe.data.GardenPlanting
+import com.moriswala.androidbpe.data.PlantAndGardenPlantings
 
 /**
  * The Data Access Object for the [GardenPlanting] class.

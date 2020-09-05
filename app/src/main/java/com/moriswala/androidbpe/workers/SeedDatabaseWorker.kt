@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.workers
 
 import android.content.Context
 import android.util.Log
@@ -23,6 +23,9 @@ import androidx.work.WorkerParameters
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
+import com.moriswala.androidbpe.data.AppDatabase
+import com.moriswala.androidbpe.data.Plant
+import com.moriswala.androidbpe.utilities.PLANT_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 
 class SeedDatabaseWorker(

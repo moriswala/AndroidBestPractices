@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.moriswala.androidbpe.adapters.GardenPlantingAdapter
+import com.moriswala.androidbpe.viewmodels.GardenPlantingListViewModel
+import com.moriswala.androidbpe.utilities.InjectorUtils
+import com.moriswala.androidbpe.R
 import com.moriswala.androidbpe.adapters.PLANT_LIST_PAGE_INDEX
 import com.moriswala.androidbpe.databinding.FragmentGardenBinding
 
@@ -19,7 +22,9 @@ import com.moriswala.androidbpe.databinding.FragmentGardenBinding
 class GardenFragment : Fragment() {
 
     private val viewModel: GardenPlantingListViewModel by viewModels {
-        InjectorUtils.provideGardenPlantingListViewModelFactory(requireContext())
+        InjectorUtils.provideGardenPlantingListViewModelFactory(
+            requireContext()
+        )
     }
 
     override fun onCreateView(

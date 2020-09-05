@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.viewmodels
 
-/**
- * Constants used throughout the app.
- */
-const val DATABASE_NAME = "sunflower-db"
-const val PLANT_DATA_FILENAME = "plants.json"
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import com.moriswala.androidbpe.data.GardenPlantingRepository
+import com.moriswala.androidbpe.data.PlantAndGardenPlantings
+
+class GardenPlantingListViewModel internal constructor(
+    gardenPlantingRepository: GardenPlantingRepository
+) : ViewModel() {
+    val plantAndGardenPlantings: LiveData<List<PlantAndGardenPlantings>> =
+        gardenPlantingRepository.getPlantedGardens()
+}

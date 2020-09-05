@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.data
 
 import androidx.paging.PagingSource
 import com.google.samples.apps.sunflower.data.UnsplashPhoto
+import com.moriswala.androidbpe.api.UnsplashService
 
 private const val UNSPLASH_STARTING_PAGE_INDEX = 1
 

@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.viewmodels
 
+import com.moriswala.androidbpe.data.PlantAndGardenPlantings
 import java.text.SimpleDateFormat
 import java.util.Locale
 

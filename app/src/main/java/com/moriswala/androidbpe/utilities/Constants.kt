@@ -14,17 +14,10 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
-
-import androidx.room.TypeConverter
-import java.util.Calendar
+package com.moriswala.androidbpe.utilities
 
 /**
- * Type converters to allow Room to reference complex data types.
+ * Constants used throughout the app.
  */
-class Converters {
-    @TypeConverter fun calendarToDatestamp(calendar: Calendar): Long = calendar.timeInMillis
-
-    @TypeConverter fun datestampToCalendar(value: Long): Calendar =
-        Calendar.getInstance().apply { timeInMillis = value }
-}
+const val DATABASE_NAME = "sunflower-db"
+const val PLANT_DATA_FILENAME = "plants.json"

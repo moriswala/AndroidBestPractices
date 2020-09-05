@@ -19,7 +19,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.moriswala.androidbpe.Plant"/>
+        <import type="com.moriswala.androidbpe.data.Plant"/>
         <variable
             name="viewModel"
             type="com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel" />

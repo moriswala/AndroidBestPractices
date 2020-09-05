@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.moriswala.androidbpe
+package com.moriswala.androidbpe.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.google.samples.apps.sunflower.data.UnsplashPhoto
+import com.moriswala.androidbpe.data.UnsplashRepository
 import kotlinx.coroutines.flow.Flow
 
 class GalleryViewModel internal constructor(

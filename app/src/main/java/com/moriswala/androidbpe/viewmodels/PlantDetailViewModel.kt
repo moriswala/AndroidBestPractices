@@ -17,22 +17,29 @@
 package com.google.samples.apps.sunflower.viewmodels
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.moriswala.androidbpe.GardenPlantingRepository
-import com.moriswala.androidbpe.PlantRepository
+import androidx.lifecycle.viewModelScope
+import com.moriswala.androidbpe.BuildConfig
+import com.moriswala.androidbpe.data.GardenPlantingRepository
+import com.moriswala.androidbpe.data.PlantRepository
+import kotlinx.coroutines.launch
 
 /**
- * Factory for creating a [PlantDetailViewModel] with a constructor that takes a [PlantRepository]
- * and an ID for the current [Plant].
+ * The ViewModel used in [PlantDetailFragment].
  */
-class PlantDetailViewModelFactory(
-    private val plantRepository: PlantRepository,
+class PlantDetailViewModel(
+    plantRepository: PlantRepository,
     private val gardenPlantingRepository: GardenPlantingRepository,
     private val plantId: String
-) : ViewModelProvider.Factory {
+) : ViewModel() {
 
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return PlantDetailViewModel(plantRepository, gardenPlantingRepository, plantId) as T
+    val isPlanted = gardenPlantingRepository.isPlanted(plantId)
+    val plant = plantRepository.getPlant(plantId)
+
+    fun addPlantToGarden() {
+        viewModelScope.launch {
+            gardenPlantingRepository.createGardenPlanting(plantId)
+        }
     }
+
+    fun hasValidUnsplashKey() = (BuildConfig.UNSPLASH_ACCESS_KEY != "null")
 }

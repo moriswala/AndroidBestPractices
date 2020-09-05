@@ -18,8 +18,8 @@ package com.google.samples.apps.sunflower.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.moriswala.androidbpe.GalleryViewModel
-import com.moriswala.androidbpe.UnsplashRepository
+import com.moriswala.androidbpe.viewmodels.GalleryViewModel
+import com.moriswala.androidbpe.data.UnsplashRepository
 
 class GalleryViewModelFactory(
     private val unsplashRepository: UnsplashRepository

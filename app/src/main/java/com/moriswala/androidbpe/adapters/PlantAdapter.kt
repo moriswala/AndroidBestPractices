@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.moriswala.androidbpe.HomeViewPagerFragmentDirections
-import com.moriswala.androidbpe.Plant
+import com.moriswala.androidbpe.data.Plant
 import com.moriswala.androidbpe.databinding.ListItemPlantBinding
 
 /**
