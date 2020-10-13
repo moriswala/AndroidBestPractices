@@ -1,6 +1,7 @@
 package com.moriswala.androidbpe
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +35,7 @@ class GardenFragment : Fragment() {
     ): View? {
         var binding = FragmentGardenBinding.inflate(inflater, container, false)
         val adapter = GardenPlantingAdapter()
+        Log.v("","")
         binding.gardenList.adapter = adapter
 
         binding.addPlant.setOnClickListener {
