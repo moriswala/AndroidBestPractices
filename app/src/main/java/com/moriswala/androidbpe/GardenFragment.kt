@@ -35,6 +35,7 @@ class GardenFragment : Fragment() {
     ): View? {
         var binding = FragmentGardenBinding.inflate(inflater, container, false)
         val adapter = GardenPlantingAdapter()
+        Log.v("","")
         binding.gardenList.adapter = adapter
 
         binding.addPlant.setOnClickListener {
