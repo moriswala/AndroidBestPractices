@@ -49,9 +49,9 @@ buildscript {
     }
 }
 
-plugins {
-    id "com.diffplug.spotless" version "5.2.0"
-}
+//plugins {
+//    id "com.diffplug.spotless" version "5.2.0"
+//}
 
 allprojects {
     repositories {
@@ -60,9 +60,9 @@ allprojects {
     }
 }
 
-spotless {
-    kotlin {
-        target "**/*.kt"
-        ktlint(ktlintVersion).userData(['max_line_length' : '100'])
-    }
-}
+//spotless {
+//    kotlin {
+//        target "**/*.kt"
+//        ktlint(ktlintVersion).userData(['max_line_length' : '100'])
+//    }
+//}
